@@ -72,17 +72,24 @@ export class ConverterComponent implements OnInit {
   }
 
   public foraignChange(): void {
+    this.verifyNotZeroValue();
     let rate: Course = this.getParsedRate();
     this.pln = this.foraign * rate.mid;
   }
 
   public plnChange(): void {
+    this.verifyNotZeroValue();
     let rate: Course = this.getParsedRate();
     this.foraign = this.pln / rate.mid;
   }
 
   private getParsedRate(): Course {
     return <Course> JSON.parse(this.selected);
+  }
+
+  private verifyNotZeroValue(): void {
+    this.pln = this.pln < 0 ? 0 : this.pln;
+    this.foraign = this.foraign < 0 ? 0 : this.foraign;
   }
 
 }
