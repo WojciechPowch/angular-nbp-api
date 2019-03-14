@@ -1,0 +1,36 @@
+.custom-icon {
+    padding-right: 1vh;
+}
+
+.custom-container {
+    padding-right: 35vh;
+    padding-left: 35vh;
+}
+
+.rate-date-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+
+.converter-position {
+    position: fixed;
+    top: 16vh;
+    right: 0;
+}
+
+.converter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 8vh;
+    width: 6vh;
+    background-color: #3f51b5;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}

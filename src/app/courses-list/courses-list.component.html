@@ -1,0 +1,24 @@
+<mat-toolbar
+  color="primary">
+  <mat-icon class="custom-icon">monetization_on</mat-icon>
+  <span>KURSY WALUT</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="openConverter()">
+    <mat-icon class="custom-icon">local_atm</mat-icon>
+    KONWERTER
+  </button>
+</mat-toolbar>
+
+<mat-toolbar>
+  <div class="rate-date-container">
+    <div>
+      Data pobrania tabeli: {{rateDate}}
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="custom-container">
+  <app-rate *ngFor="let course of coursesList"
+   [data]="course">
+  </app-rate>
+</div>

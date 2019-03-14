@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span>KONWERTER</span>
+        <span class="spacer"></span>
+        <mat-icon class="close-button" (click)="closeDialog()">close</mat-icon>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+                <mat-form-field>
+                        <mat-select placeholder="Waluta"
+                            [(value)]="selected"
+                            #select>
+                            <mat-option *ngFor="let rate of ratesSelect" value="{{getRateAsJSON(rate)}}">
+                                {{rate.code}}{{" " + rate.currency | titlecase}}
+                            </mat-option>
+                        </mat-select>
+                </mat-form-field>
+        </div>
+    </div>
+    
+    <div class="row"
+        *ngIf="selected">
+        <div class="col-4">
+            <mat-form-field>
+                <input placeholder="{{getCode()}}"
+                    [(ngModel)]="foraign"
+                    (ngModelChange)="foraignChange()"
+                    type="number" 
+                    matInput>
+            </mat-form-field>
+        </div>
+
+        <div class="col-4 flex-display">
+            <mat-icon>arrow_left</mat-icon>
+            <mat-icon>arrow_right</mat-icon>
+        </div>
+
+        <div class="col-4">
+            <mat-form-field>
+                <input placeholder="PLN"
+                    [(ngModel)]="pln"
+                    (ngModelChange)="plnChange()" 
+                    type="number" 
+                    matInput>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

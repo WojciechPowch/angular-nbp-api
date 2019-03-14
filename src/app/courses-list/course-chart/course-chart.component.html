@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon>attach_money</mat-icon>
+    <span>
+      {{data.currency | titlecase}}
+    </span>
+    <span class="spacer"></span>
+    <mat-icon class="close-button" (click)="closeDialog()">close</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-toolbar class="date-bar">
+    <mat-form-field>
+        <input matInput
+          [(ngModel)]="dataOd"
+          (ngModelChange)="valueChanged()" 
+          [matDatepicker]="dpFrom"
+          [value]="dataOd"
+          disabled>
+        <mat-datepicker-toggle matSuffix [for]="dpFrom"></mat-datepicker-toggle>
+        <mat-datepicker #dpFrom disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="left-date-picker">
+        <input matInput
+          [(ngModel)]="dataDo"
+          (ngModelChange)="valueChanged()" 
+          [matDatepicker]="dpTo" 
+          [value]="dataDo"
+          disabled>
+        <mat-datepicker-toggle matSuffix [for]="dpTo"></mat-datepicker-toggle>
+        <mat-datepicker #dpTo disabled="false"></mat-datepicker>
+    </mat-form-field>
+</mat-toolbar>
+
+<div style="display: block">
+  <canvas mdbChart
+      [chartType]="chartType"
+      [datasets]="chartDatasets"
+      [labels]="chartLabels"
+      [colors]="chartColors"
+      [options]="chartOptions"
+      [legend]="true">
+  </canvas>
+</div>

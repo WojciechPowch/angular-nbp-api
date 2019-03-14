@@ -1,0 +1,13 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.close-button {
+    cursor: pointer;
+}
+
+.flex-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

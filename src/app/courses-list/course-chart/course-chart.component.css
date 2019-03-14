@@ -1,0 +1,15 @@
+.date-bar {
+    min-height: 9vh;
+}
+
+.left-date-picker {
+    margin-left: 2vh;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.close-button {
+    cursor: pointer;
+}

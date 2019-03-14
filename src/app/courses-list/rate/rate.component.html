@@ -1,0 +1,27 @@
+<mat-card class="custom-card">
+  <mat-card-title>
+    <b>{{data.currency | titlecase }}</b>
+  </mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content class="custom-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col font">
+          KOD: {{data.code}}
+        </div>
+      </div>
+      <div class="row">
+          <div class="col font primary-color">
+            <b>BIEŻĄCY KURS:</b> {{data.mid}} zł
+          </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button
+    color="primaty"
+    (click)="onRateClick()">
+      <mat-icon>insert_chart</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
